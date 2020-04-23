@@ -1,0 +1,25 @@
+name: CI
+
+on: push
+
+jobs:
+  build:
+    name: Build
+    runs-on: [self-hosted, Linux, ForksForTest, Ubuntu19.10]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: set new number
+        run: echo "::set-env name=new_number::$(date +"%y%m%d")${{ github.run_number }}"
+
+      - name: update file
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          echo "Update test.txt - $new_number" >> test.txt
+          
+          git add -A
+          git commit -m "Update test.txt - $new_number"
+          git push
