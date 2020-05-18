@@ -10,8 +10,8 @@ jobs:
       image: node:14.2
       ports: 
         - 8080:80
-      volumes:
-        - /home/var/www/html:volume/var_www_html
+#      volumes:
+#        - /home/var/www/html:volume/var_www_html
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -25,3 +25,10 @@ jobs:
         run: |
           echo "List All Environment Variables:"
           printenv
+
+  job2:
+    name: View dir
+    runs-on: ubuntu-latest
+    steps:
+      - name: View dir
+        run: ls -R /home
