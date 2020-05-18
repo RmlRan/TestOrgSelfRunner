@@ -10,8 +10,8 @@ jobs:
       image: node:14.2
       ports: 
         - 8080:80
-#      volumes:
-#        - /home/var/www/html:volume/var_www_html
+      volumes:
+        - /home/linuxbrew:_rh/linuxbrew
     steps:
       - name: Checkout
         uses: actions/checkout@v2
