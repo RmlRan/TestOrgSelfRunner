@@ -24,7 +24,7 @@ jobs:
       - name: Check env
         run: |
           echo "List all the volumes:"
-          docker volume ls
+          df
           echo "=============================================="
           echo "List all environment variables:"
           printenv
