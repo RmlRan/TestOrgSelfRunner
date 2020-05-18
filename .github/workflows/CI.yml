@@ -23,12 +23,8 @@ jobs:
 
       - name: Check env
         run: |
-          echo "List All Environment Variables:"
+          echo "List all the volumes:"
+          docker volume ls
+          echo "=============================================="
+          echo "List all environment variables:"
           printenv
-
-  job2:
-    name: View dir
-    runs-on: ubuntu-latest
-    steps:
-      - name: View dir
-        run: ls -R /home
