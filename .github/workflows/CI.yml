@@ -11,7 +11,7 @@ jobs:
       ports: 
         - 8080:80
       volumes:
-        - /home/linuxbrew:_rh/linuxbrew
+        - /home/linuxbrew:/_rh/linuxbrew
     steps:
       - name: Checkout
         uses: actions/checkout@v2
